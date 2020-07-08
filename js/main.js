@@ -19,7 +19,7 @@ function render() {
   document.getElementById('table').innerHTML = '';
   for (let i = 0; i < myLibrary.length; i += 1) {
     const currentTable = document.getElementById('table').innerHTML;
-    const newBook = `<tr>\n<td>${myLibrary[i].name}</td>\n<td>${myLibrary[i].author}</td>\n<td>${myLibrary[i].pages}</td>\n<td class="status book${i}">${myLibrary[i].read}</td> <td><a onclick="removeBook(${i})" class="waves-effect waves-light btn-small red darken-3">Delete<i class="material-icons left">delete</i></a></td>
+    const newBook = `<tr>\n<td>${myLibrary[i].name}</td>\n<td>${myLibrary[i].author}</td>\n<td>${myLibrary[i].pages}</td>\n<td><a class="status book${i} btn">${myLibrary[i].read}</a></td> <td><a onclick="removeBook(${i})" class="waves-effect waves-light btn-small red darken-3">Delete<i class="material-icons left">delete</i></a></td>
       </tr>`;
     document.getElementById('table').innerHTML = currentTable + newBook;
   }
