@@ -14,4 +14,15 @@ main {
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
 }
+
+form {
+  position: fixed;
+  padding: 50px !important;
+  top: 90px;
+  right: 10px !important;
+  -webkit-transition: 350ms;
+  transition: 350ms;
+  display: none;
+  height: 0;
+}
 /*# sourceMappingURL=main.css.map */
