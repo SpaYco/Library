@@ -9,12 +9,16 @@ function Book(name, author, pages, read) {
 
 Book.prototype.bookStatus = function(el){
     if (el.classList.contains("status")) {
+        let book = el.classList.item(1).split('').splice(4, ).join('');
       if (el.innerHTML === "read") {
-        el.innerHTML = "unread"
+        el.innerHTML = "unread";
+        myLibrary[book].read = 'unread';
       } else {
-        el.innerHTML = "read"
+        el.innerHTML = "read";
+        myLibrary[book].read = 'read';
       }
     }
+    render();
 }
 
 
@@ -32,17 +36,24 @@ function addBookToLibrary(book) {
         myLibrary.push(newBook);
         render();
         formHide();
+        document.querySelector("#book-form").reset();
     }
+}
+function importLocal(){
+        JSON.parse(localStorage.getItem('library')).forEach(element => {
+            myLibrary.push(element)
+        });
 }
 
 function render() {
     document.getElementById('table').innerHTML = ''
     for (let i = 0; i < myLibrary.length; i++) {
         let current_table = document.getElementById('table').innerHTML;
-        let newBook = `<tr>\n<td>${myLibrary[i].name}</td>\n<td>${myLibrary[i].author}</td>\n<td>${myLibrary[i].pages}</td>\n<td class="status">${myLibrary[i].read}</td> <td><a onclick="removeBook(${i})" class="waves-effect waves-light btn-small">Delete<i class="material-icons left">delete</i></a></td>
+        let newBook = `<tr>\n<td>${myLibrary[i].name}</td>\n<td>${myLibrary[i].author}</td>\n<td>${myLibrary[i].pages}</td>\n<td class="status book${i}">${myLibrary[i].read}</td> <td><a onclick="removeBook(${i})" class="waves-effect waves-light btn-small">Delete<i class="material-icons left">delete</i></a></td>
       </tr>`;
         document.getElementById('table').innerHTML = current_table + newBook;
     }
+    localStorage.setItem('library', JSON.stringify(myLibrary))
 }
 
 function removeBook(num) {
