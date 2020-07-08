@@ -3,7 +3,7 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
-/*eslint-disable */
+/* eslint-disable */
 
 const _get = function get(object, property, receiver) {
   if (object === null) object = Function.prototype;

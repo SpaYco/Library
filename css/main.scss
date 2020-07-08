@@ -1,30 +1,30 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 main {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 nav .material-icons {
-    margin-top: 5px !important;
+  margin-top: 5px !important;
 }
 
 form {
-    position: fixed;
-    padding: 50px !important;
-    top: 90px;
-    right: 10px !important;
-    transition: 350ms;
-    display: none;
-    height: 0;
-    z-index: 999;
+  position: fixed;
+  padding: 50px !important;
+  top: 90px;
+  right: 10px !important;
+  transition: 350ms;
+  display: none;
+  height: 0;
+  z-index: 999;
 }
 
 .add-form {
-    position: fixed !important;
-    bottom: 80px;
-    right: 25px;
+  position: fixed !important;
+  bottom: 80px;
+  right: 25px;
 }
