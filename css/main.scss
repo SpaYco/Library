@@ -8,6 +8,10 @@ main {
     flex: 1 0 auto;
 }
 
+nav .material-icons {
+    margin-top: 5px !important;
+}
+
 form {
     position: fixed;
     padding: 50px !important;
@@ -17,4 +21,10 @@ form {
     display: none;
     height: 0;
     z-index: 999;
+}
+
+.add-form {
+    position: fixed !important;
+    bottom: 80px;
+    right: 25px;
 }

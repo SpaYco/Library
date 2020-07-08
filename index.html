@@ -13,16 +13,15 @@
 <body>
     <header>
         <nav class="purple">
-            <a href="#" class="brand-logo">Library</a>
-            <ul id="nav-mobile" class="right">
-                <li><a onclick="formSubmit()" class="btn-floating btn-large waves-effect waves-light purple darken-4"><i
-                            class="material-icons">add</i></a></li>
-            </ul>
+            <a href="#" class="brand-logo center "><i class="material-icons ">menu_book</i>Library</a>
         </nav>
     </header>
 
     <body onload="importLocal(); render();">
         <main>
+            <a onclick="formSubmit()"
+                class="btn-floating btn-large waves-effect waves-light purple darken-4 add-form"><i
+                    class="material-icons">add</i></a>
             <div class="row">
                 <form id="book-form" class="form-popup col s8 purple darken-1 z-depth-5">
                     <div class="form-group ">
