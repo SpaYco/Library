@@ -1,16 +1,4 @@
-let myLibrary = [{
-        name: 'hi',
-        author: 'yo',
-        pages: 53,
-        read: 'checked'
-    },
-    {
-        name: 'hi',
-        author: 'yo',
-        pages: 55,
-        read: 'checked'
-    }
-];
+let myLibrary = [];
 
 function Book(name, author, pages, read) {
     this.name = name;
@@ -18,6 +6,17 @@ function Book(name, author, pages, read) {
     this.pages = pages;
     this.read = read;
 }
+
+Book.prototype.bookStatus = function(el){
+    if (el.classList.contains("status")) {
+      if (el.innerHTML === "read") {
+        el.innerHTML = "unread"
+      } else {
+        el.innerHTML = "read"
+      }
+    }
+}
+
 
 function addBookToLibrary(book) {
     // do stuff here
@@ -33,8 +32,6 @@ function addBookToLibrary(book) {
         myLibrary.push(newBook);
         render();
         formHide();
-    } else {
-        form.sumbit();
     }
 }
 
@@ -42,7 +39,7 @@ function render() {
     document.getElementById('table').innerHTML = ''
     for (let i = 0; i < myLibrary.length; i++) {
         let current_table = document.getElementById('table').innerHTML;
-        let newBook = `<tr>\n<td>${myLibrary[i].name}</td>\n<td>${myLibrary[i].author}</td>\n<td>${myLibrary[i].pages}</td>\n<td>${myLibrary[i].read}</td> <td><a onclick="removeBook(${i})" class="waves-effect waves-light btn-small">button<i class="material-icons left">delete</i></a></td>
+        let newBook = `<tr>\n<td>${myLibrary[i].name}</td>\n<td>${myLibrary[i].author}</td>\n<td>${myLibrary[i].pages}</td>\n<td class="status">${myLibrary[i].read}</td> <td><a onclick="removeBook(${i})" class="waves-effect waves-light btn-small">Delete<i class="material-icons left">delete</i></a></td>
       </tr>`;
         document.getElementById('table').innerHTML = current_table + newBook;
     }
@@ -71,3 +68,8 @@ function formHide() {
         form.style.display = 'none';
     }, 350);
 }
+
+document.querySelector("#table").addEventListener("click", (e) => {
+  const newBook = new Book(name, author, pages, status)
+  newBook.bookStatus(e.target)
+})
