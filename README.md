@@ -1,10 +1,9 @@
-# Project Name
+# Library
 
-> One paragraph statement about the project.
+> a Webpage where you can add and remove books!
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
 
 ## Built With
 
