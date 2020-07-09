@@ -1,0 +1,38 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+nav .material-icons {
+  margin-top: 5px !important;
+}
+
+form {
+  position: fixed;
+  padding: 50px !important;
+  top: 90px;
+  right: 10px !important;
+  -webkit-transition: 350ms;
+  transition: 350ms;
+  display: none;
+  height: 0;
+  z-index: 999;
+}
+
+.add-form {
+  position: fixed !important;
+  bottom: 80px;
+  right: 25px;
+}

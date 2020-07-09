@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection" />
+</head>
+
+<body>
+    <header>
+        <nav class="purple">
+            <a href="#" class="brand-logo center "><i class="material-icons ">menu_book</i>Library</a>
+        </nav>
+    </header>
+
+    <body onload="importLocal(); render();">
+        <main>
+            <a onclick="formSubmit()"
+                class="btn-floating btn-large waves-effect waves-light purple darken-4 add-form"><i
+                    class="material-icons">add</i></a>
+            <div class="row">
+                <form id="book-form" class="form-popup col s8 purple darken-1 z-depth-5">
+                    <div class="form-group ">
+                        <label id="title">Title</label>
+                        <input type="text" name="title" id="title" class="indigo-text text-lighten-5" required>
+                    </div>
+                    <div class="form-group">
+                        <label id="Author">Author</label>
+                        <input type="text" name="author" id="author" class="indigo-text text-lighten-5" required>
+                    </div>
+                    <div class="form-group">
+                        <label id="pages">Pages</label>
+                        <input type="number" name="pages" id="pages" class="indigo-text text-lighten-5" required>
+                    </div>
+                    <p><label id="status" class="indigo-text text-lighten-5">
+                            <input type="checkbox" name="status" id="status" class="indigo-text text-lighten-5"
+                                required>
+                            <span>Read?</span>
+                        </label>
+                    </p>
+
+                    <button onclick="addBookToLibrary()" class="btn waves-effect waves-light purple darken-4"
+                        type="button" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <button onclick="formHide()" class="btn waves-effect waves-light purple darken-4" type="button"
+                        name="action">cancel
+                        <i class="material-icons right">cancel</i>
+                    </button>
+                </form>
+            </div>
+            <table class="centered highlight ">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Read?</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                </tbody>
+            </table>
+        </main>
+        <footer class="page-footer purple">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2020 Made By SpaYco & Shola
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script type="text/javascript" src="./js/materialize.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
